@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: #treetracker-microservice-name#
+  name: treetracker-share-api
 spec:
   selector:
-    app: #treetracker-microservice-name#
+    app: treetracker-share-api
   ports:
     - name: http
       protocol: TCP
       port: 80
-      targetPort: 3006
+      targetPort: 3000

@@ -1,0 +1,8 @@
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: treetracker-share-api
+spec:
+  prefix: /api/share/
+  service: treetracker-share-api
+  rewrite: /

@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: #treetracker-microservice-name#
+  name: treetracker-share-api
   labels:
-    app: #treetracker-microservice-name#
+    app: treetracker-share-api
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: #treetracker-microservice-name#
+      app: treetracker-share-api
   template:
     metadata:
       labels:
-        app: #treetracker-microservice-name#
+        app: treetracker-share-api
     spec:
       containers:
-      - name: #treetracker-microservice-name#
-        image: greenstand/#treetracker-microservice-name#:latest
+      - name: treetracker-share-api
+        image: greenstand/treetracker-share-api:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
@@ -26,8 +26,8 @@ spec:
               secretKeyRef:
                 name: treetracker-api-database-connection
                 key: db
-          - name: DATABASE_SCHEMA
-            value: #schema-name#
+          # - name: DATABASE_SCHEMA
+          #   value: #schema-name#
           - name: NODE_LOG_LEVEL
             value: trace
           - name: REMOTE_LOG_URL
