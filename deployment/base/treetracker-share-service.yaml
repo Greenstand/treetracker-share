@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: treetracker-share-api
+  name: treetracker-share
 spec:
   selector:
-    app: treetracker-share-api
+    app: treetracker-share
   ports:
     - name: http
       protocol: TCP

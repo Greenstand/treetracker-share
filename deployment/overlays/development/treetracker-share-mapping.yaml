@@ -1,7 +1,7 @@
 apiVersion: getambassador.io/v2
 kind: Mapping
 metadata:
-  name: treetracker-share-api
+  name: treetracker-share
 spec:
   cors:
     origins: '*'
