@@ -3,6 +3,7 @@ kind: Mapping
 metadata:
   name: treetracker-share
 spec:
+  host: dev-preview.treetracker.org
   cors:
     origins: '*'
     methods: GET, POST, PATCH, PUT, OPTIONS
