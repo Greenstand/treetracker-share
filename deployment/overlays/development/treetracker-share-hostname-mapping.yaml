@@ -1,0 +1,6 @@
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: treetracker-share-hostname
+spec:
+  host: dev-preview.treetracker.org

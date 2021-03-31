@@ -1,5 +1,6 @@
 resources:
 - treetracker-share-deployment.yaml
 - treetracker-share-mapping.yaml
+- treetracker-share-hostname-mapping.yaml
 - treetracker-share-service.yaml
 - namespace.yaml
