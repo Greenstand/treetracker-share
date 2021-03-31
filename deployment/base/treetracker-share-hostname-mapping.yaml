@@ -4,6 +4,7 @@ metadata:
   name: treetracker-share-hostname
 spec:
   host: env-preview.treetracker.org 
+  prefix: /
   cors:
     origins: '*'
     methods: GET, OPTIONS
