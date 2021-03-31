@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/Greenstand/treetracker-share/compare/v1.0.1...v1.0.2) (2021-03-31)
+
+
+### Bug Fixes
+
+* need prefix for hostname mapping ([38cd9eb](https://github.com/Greenstand/treetracker-share/commit/38cd9ebfce749e6bbce96934f223d3d92149581b))
+
 ## [1.0.1](https://github.com/Greenstand/treetracker-share/compare/v1.0.0...v1.0.1) (2021-03-31)
 
 
