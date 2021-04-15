@@ -1,5 +1,5 @@
 
-name: Deploy to Test Env
+name: Deploy Treetracker share to Test Env
 
 
 on:
@@ -32,7 +32,7 @@ jobs:
       - name: Copy kustomize.yml
         run: cp deployment/kustomize/kustomization.yaml deployment/kustomization.yaml
       - name: Run kustomize
-        run: (cd deployment && ../kustomize edit set image greenstand/${{ github.event.repository.name }}:${{ steps.package-version.outputs.current-version }} )
+        run: (cd deployment && ../kustomize edit set image greenstand/treetracker-share:${{ steps.package-version.outputs.current-version }} )
       - name: Install doctl for kubernetes
         uses: digitalocean/action-doctl@v2
         with:
@@ -40,4 +40,4 @@ jobs:
       - name: Save DigitalOcean kubeconfig
         run: doctl kubernetes cluster kubeconfig save ${{ secrets.TEST_CLUSTER_NAME }}
       - name: Update kubernetes resources
-        run: kubectl -n wallet-api apply --wait -k ./deployment/
+        run: kubectl -n web-share apply --wait -k ./deployment/
