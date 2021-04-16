@@ -13,11 +13,11 @@ env:
   project-directory: ./
 
 jobs:
-  deploy-test:
+  deploy:
     name: Deploy latest to test env, requires approval
     runs-on: ubuntu-latest
     if: |
-      github.repository_owner == 'Greenstand/treetracker-share'
+      github.repository == 'Greenstand/treetracker-share'
     steps:
       - uses: actions/checkout@v2
         with:
