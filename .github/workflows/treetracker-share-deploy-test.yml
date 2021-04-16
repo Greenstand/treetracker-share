@@ -1,5 +1,5 @@
 
-name: Deploy Treetracker share to Test Env
+name: Deploy to Test Env
 
 
 on:
