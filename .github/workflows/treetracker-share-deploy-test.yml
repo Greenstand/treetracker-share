@@ -39,4 +39,3 @@ jobs:
         run: doctl kubernetes cluster kubeconfig save ${{ secrets.TEST_CLUSTER_NAME }}
       - name: Update kubernetes resources
         run: kustomize build deployment/overlays/test | kubectl apply -n web-share --wait -f -
-        working-directory: ${{ env.project-directory }}
