@@ -2,6 +2,13 @@ apiVersion: getambassador.io/v2
 kind: Mapping
 metadata:
   name: treetracker-share-hostname
-  namespace: web-share
 spec:
-  host: test-preview.treetracker.org
+  host: env-preview.treetracker.org 
+  prefix: /
+  cors:
+    origins: '*'
+    methods: GET, OPTIONS
+    headers:
+      - Content-Type
+      - Authorization
+  service: treetracker-share
