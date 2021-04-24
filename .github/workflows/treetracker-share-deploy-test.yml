@@ -5,8 +5,8 @@ name: Deploy to Test Env
 on:
   workflow_dispatch:
     inputs:
-      git-tag:
-        description: 'tag'
+      environment:
+        description: 'git-tag'
         required: true
 
 env: 
