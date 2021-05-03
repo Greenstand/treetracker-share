@@ -3,7 +3,7 @@ kind: Mapping
 metadata:
   name: treetracker-share-hostname
 spec:
-  host: env-preview.treetracker.org 
+  host: test-preview.treetracker.org 
   prefix: /
   cors:
     origins: '*'
