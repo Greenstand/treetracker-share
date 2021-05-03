@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/Greenstand/treetracker-share/compare/v1.0.4...v1.0.5) (2021-05-03)
+
+
+### Bug Fixes
+
+* hostname mapping ambassador ([395e295](https://github.com/Greenstand/treetracker-share/commit/395e29555096ab070ccbfe891312e76335cf1120))
+
 ## [1.0.4](https://github.com/Greenstand/treetracker-share/compare/v1.0.3...v1.0.4) (2021-04-24)
 
 
