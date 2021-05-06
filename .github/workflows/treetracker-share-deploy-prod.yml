@@ -1,5 +1,5 @@
 
-name: Deploy to Test Env
+name: Deploy to Prod Env
 
 
 on:
@@ -14,7 +14,7 @@ env:
 
 jobs:
   deploy:
-    name: Deploy latest to test env, requires approval
+    name: Deploy latest to prod env, requires approval
     runs-on: ubuntu-latest
     if: |
       github.repository == 'Greenstand/treetracker-share'
@@ -34,11 +34,12 @@ jobs:
       - name: Install doctl for kubernetes
         uses: digitalocean/action-doctl@v2
         with:
-          token: ${{ secrets.TEST_DIGITALOCEAN_TOKEN }}
+          token: ${{ secrets.DIGITALOCEAN_PRODUCTION_TOKEN }}
       - name: Save DigitalOcean kubeconfig
-        run: doctl kubernetes cluster kubeconfig save ${{ secrets.TEST_CLUSTER_NAME }}
+        run: doctl kubernetes cluster kubeconfig save ${{ secrets.PRODUCTION_CLUSTER_NAME }}
       - name: Update kubernetes resources
         run: kustomize build deployment/overlays/test | kubectl apply -n web-share --wait -f -
+
       - name: Notify slack success
         if: success()
         env:
