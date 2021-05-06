@@ -144,3 +144,23 @@ jobs:
         run: doctl kubernetes cluster kubeconfig save ${{ secrets.DEV_CLUSTER_NAME }}
       - name: Update kubernetes resources
         run: kustomize build deployment/overlays/development | kubectl apply -n web-share --wait -f -
+      
+      - name: Notify slack success
+        if: success()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        uses: Discontract/github-action-slack-notify-deployment@v1
+        with:
+          channel: cloud-notifications
+          status: SUCCESS
+          color: good
+
+      - name: Notify slack fail
+        if: failure()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        uses: Discontract/github-action-slack-notify-deployment@v1
+        with:
+          channel: cloud-notifications
+          status: FAILED
+          color: danger
